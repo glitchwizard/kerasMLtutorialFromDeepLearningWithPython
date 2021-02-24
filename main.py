@@ -1,7 +1,7 @@
 # load MNIST dataset in keras
 from keras.datasets import mnist
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
-
+digit = train_images[4]
 # Create the network architecture
 from keras import models
 from keras import layers
@@ -36,6 +36,9 @@ test_loss, test_acc = network.evaluate(test_images, test_labels)
 print('test_acc:', test_acc)
 print('test_loss:', test_loss)
 
+# lets check out the 4th image from mnist
 
-
-
+import matplotlib.pyplot as plt
+#plt.imshow(digit, cmap=plt.get_cmap('binary'))
+plt.imshow(digit, cmap=plt.cm.binary)
+plt.show()
